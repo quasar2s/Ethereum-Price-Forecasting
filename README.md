@@ -26,22 +26,22 @@ built on top of the Python programming language. Prophet requires data to be in 
 
 
 # Hyperparameter Tuning
+
 A considerable amount of research was done for tuning parameters:
 
-growth: 'logistic' 
+- growth: 'logistic' 
 
-n_changepoints: Number of potential changepoints to include. 3 was selected as Ethereum is likely to get three big updates in the coming five years. First one being The Merge : It will mark the end of proof-of-work for Ethereum, and the full transition to proof-of-stake. This will reduce Ethereum's energy consumption by ~99.95%.
+- n_changepoints: Number of potential changepoints to include. 3 was selected as Ethereum is likely to get three big updates in the coming five years. First one being The Merge : It will mark the end of proof-of-work for Ethereum, and the full transition to proof-of-stake. This will reduce Ethereum's energy consumption by ~99.95%.
 
-changepoint_range: Proportion of history in which trend changepoints will be estimated. Defaults to 0.8 for the first 80%. 1 was chosen to estimate trend changepoints from entire history. 
+- changepoint_range: Proportion of history in which trend changepoints will be estimated. Defaults to 0.8 for the first 80%. 1 was chosen to estimate trend changepoints from entire history. 
 
-yearly_seasonality: 'True'
+- yearly_seasonality: 'True'
 
-holidays: Since almost 49% of all eth is owned by US. To account holiday's effect on Ethereum, a data-frame contating list of all US holidays was inserted in model.
+- holidays: Since almost 49% of all eth is owned by US. To account holiday's effect on Ethereum, a data-frame contating list of all US holidays was inserted in model.
 
-seasonality_mode: 'multiplicative'. It’s a multiplicative time series because of how cryptocurrency price fluctuates by the year, which also means the seasonal component changing with trend.
+- seasonality_mode: 'multiplicative'. It’s a multiplicative time series because of how cryptocurrency price fluctuates by the year, which also means the seasonal component changing with trend.
 
-changepoint_prior_scale: By default, this parameter is set to 0.05. Increasing it will make the trend more flexible. 0.5 was selected considering volatile nature of crypto market as a whole. 
-
+- changepoint_prior_scale: By default, this parameter is set to 0.05. Increasing it will make the trend more flexible. 0.5 was selected considering volatile nature of crypto market as a whole.
 
 # Output 
 **Forecast**
